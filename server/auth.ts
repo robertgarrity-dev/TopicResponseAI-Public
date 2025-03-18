@@ -3,38 +3,45 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const AUTH_API_KEY = process.env.AUTH_API_KEY || ""; // API Key for requests
-const CORS_TOKEN = process.env.CORS_TOKEN || ""; // Separate token for CORS validation
+// Load authentication keys safely
+const AUTH_API_KEY = process.env.AUTH_API_KEY?.trim();
+const CORS_TOKEN = process.env.CORS_TOKEN?.trim();
 
+// Ensure required authentication tokens exist
 if (!AUTH_API_KEY || !CORS_TOKEN) {
-  throw new Error("Required authentication tokens are not configured");
+  console.error("🚨 Critical Error: Authentication tokens are missing.");
+  throw new Error("Authentication tokens are required. Ensure AUTH_API_KEY and CORS_TOKEN are set.");
 }
+
+// Utility function to normalize header keys (case-insensitive lookup)
+const getHeader = (req: Request, headerName: string) => {
+  return req.headers[headerName.toLowerCase()] || req.headers[headerName.toUpperCase()];
+};
 
 // 🔹 API Key Authentication Middleware
 export const authenticateApiKey = (req: Request, res: Response, next: NextFunction) => {
-  const apiKey = req.headers["x-api-key"];
+  const apiKey = getHeader(req, "x-api-key");
 
   if (!apiKey || apiKey !== AUTH_API_KEY) {
-    // Log authentication failure without exposing the key
-    console.warn("🚫 Authentication failed - Invalid or missing API key");
+    console.warn("🚫 Authentication attempt failed.");
     return res.status(403).json({
       error: "Forbidden",
-      message: "Invalid or missing API key"
+      message: "Invalid API key.",
     });
   }
 
-  next(); // API key is valid, continue to route
+  next(); // API key is valid, proceed to the next middleware
 };
 
 // 🔹 CORS Token Validation Middleware
 export const validateCorsToken = (req: Request, res: Response, next: NextFunction) => {
-  const corsToken = req.headers["x-cors-token"];
+  const corsToken = getHeader(req, "x-cors-token");
 
   if (!corsToken || corsToken !== CORS_TOKEN) {
-    console.warn("🚫 CORS validation failed - Invalid or missing token");
+    console.warn("🚫 CORS validation failed.");
     return res.status(403).json({
       error: "Forbidden",
-      message: "Invalid origin"
+      message: "Invalid CORS token.",
     });
   }
 
