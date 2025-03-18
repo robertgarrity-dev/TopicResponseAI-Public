@@ -1,0 +1,120 @@
+2025-03-12 20:52:09.88
+c7e5e1cb
+System
+command finished with error [npm run start]: signal: terminated
+2025-03-12 20:52:09.98
+c7e5e1cb
+System
+main done, exiting
+2025-03-12 20:55:19.55
+508c95c9
+System
+system: received signal terminated
+2025-03-12 20:55:19.57
+508c95c9
+System
+command finished with error [npm run start]: signal: terminated
+2025-03-12 20:55:19.58
+508c95c9
+System
+main done, exiting
+2025-03-12 20:58:29.79
+50662af0
+System
+starting up user application
+2025-03-12 20:58:30.02
+50662af0
+System
+forwarding local port 5000 to external port 80
+2025-03-12 20:58:31.35
+50662af0
+User
+> rest-express@1.0.0 start
+2025-03-12 20:58:31.35
+50662af0
+User
+> NODE_ENV=production node dist/index.js
+2025-03-12 20:58:32.42
+50662af0
+User
+🔄 Loading environment configuration...
+2025-03-12 20:58:32.42
+50662af0
+User
+🔄 Current environment state:
+2025-03-12 20:58:32.42
+50662af0
+User
+NODE_ENV: production
+2025-03-12 20:58:32.42
+50662af0
+User
+RATE_LIMIT_MAX_REQUESTS: 6
+2025-03-12 20:58:32.42
+50662af0
+User
+RATE_LIMIT_WINDOW_MS: 60000
+2025-03-12 20:58:32.42
+50662af0
+User
+🔍 Processing RATE_LIMIT_MAX_REQUESTS input: 6
+2025-03-12 20:58:32.42
+50662af0
+User
+🔍 Processing RATE_LIMIT_WINDOW_MS input: 60000
+2025-03-12 20:58:32.43
+50662af0
+User
+✅ Validated environment configuration:
+2025-03-12 20:58:32.43
+50662af0
+User
+================================
+2025-03-12 20:58:32.43
+50662af0
+User
+NODE_ENV: production
+2025-03-12 20:58:32.43
+50662af0
+User
+Rate Limit Max Requests: 6
+2025-03-12 20:58:32.43
+50662af0
+User
+Rate Limit Window: 60000
+2025-03-12 20:58:32.43
+50662af0
+User
+================================
+2025-03-12 20:58:32.51
+50662af0
+User
+Express trust proxy enabled for accurate IP detection
+2025-03-12 20:58:32.51
+50662af0
+User
+Allowed Origins: [
+2025-03-12 20:58:32.51
+50662af0
+User
+'https://replit.com/@support276/TopicResponseAI',
+2025-03-12 20:58:32.51
+50662af0
+User
+'https://app.topicresponseai.com',
+2025-03-12 20:58:32.51
+50662af0
+User
+'https://topicresponseai.com',
+2025-03-12 20:58:32.51
+50662af0
+User
+'*.replit.dev'
+2025-03-12 20:58:32.51
+50662af0
+User
+]
+2025-03-12 20:58:32.51
+50662af0
+User
+[2025-03-13T01:58:32.518Z] [express] 🚀 Server running in production mode on port 5000

@@ -1,0 +1,100 @@
+Request URL:
+https://app.topicresponseai.com/api/topics
+Request Method:
+GET
+Status Code:
+403 Forbidden
+Remote Address:
+34.111.179.208:443
+Referrer Policy:
+strict-origin-when-cross-origin
+access-control-allow-credentials:
+true
+access-control-allow-headers:
+Content-Type, Authorization, x-api-key, x-cors-token
+access-control-allow-methods:
+GET, POST, PUT, DELETE, OPTIONS
+access-control-allow-origin:
+*
+access-control-expose-headers:
+Authorization
+alt-svc:
+h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+content-length:
+129
+content-type:
+application/json; charset=utf-8
+date:
+Thu, 13 Mar 2025 15:03:46 GMT
+etag:
+W/"81-rWqvdksxDCX/vN7/pm99T8oB5TQ"
+referrer-policy:
+strict-origin-when-cross-origin
+server:
+Google Frontend
+set-cookie:
+connect.sid=s%3AZah6dNhsjyMzH05HuHJyu_kBn24g6hwA.qhqNHIhe9J7M79EBzX4ruK7fc4bpUy5LPp5wWkKuijA; Domain=.topicresponseai.com; Path=/; Expires=Fri, 14 Mar 2025 15:03:46 GMT; HttpOnly; Secure; SameSite=None
+strict-transport-security:
+max-age=63072000; includeSubDomains
+via:
+1.1 google
+x-cloud-trace-context:
+d476f422d61227ac3fa7c7f81fd10dfd
+x-content-type-options:
+nosniff
+x-download-options:
+noopen
+x-frame-options:
+DENY
+x-permitted-cross-domain-policies:
+none
+x-xss-protection:
+1; mode=block
+:authority:
+app.topicresponseai.com
+:method:
+GET
+:path:
+/api/topics
+:scheme:
+https
+accept:
+*/*
+accept-encoding:
+gzip, deflate, br, zstd
+accept-language:
+en-US,en;q=0.9
+content-type:
+application/json
+cookie:
+connect.sid=s%3AdNg0VjzdThiHdfLDd8trccJqSemoSXpi.GsRPNsIm80TLenFlEXZAiGF7kTVBv7Fg%2FR0EnQoUqzs; connect.sid=s%3AH3CDlx5ZRU0kwg6EV2ukVtihDIXRp-RK.n8OI18x7ziviqrV3qn9xvWrDQsc7RRdZ0kkzDMWegYE
+priority:
+u=1, i
+referer:
+https://app.topicresponseai.com/
+sec-ch-ua:
+"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"
+sec-ch-ua-mobile:
+?0
+sec-ch-ua-platform:
+"Windows"
+sec-fetch-dest:
+empty
+sec-fetch-mode:
+cors
+sec-fetch-site:
+same-origin
+user-agent:
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+x-api-key:
+6aa470b2c463c71c2cba8129b9da9b9a690236df837bf5e1f74b009d7c05ef36
+x-cors-token:
+369fa2ec67a4de165a31d4e5821b49d10a4ad4eb35309b1464873ebd04b0343c
+Privacy and security panel
+Test how a website behaves with limited third-party cookies and find relevant issues in the new 'Privacy' section of the evolved 'Privacy and security' panel.
+
+Calibrated CPU throttling presets
+Based on your users' experience, automatically calibrate and use more accurate CPU throttling presets for low- and mid-tier mobile devices.
+
+First- and third-party highlighting in Performance
+Reduce the noise of third-party data and hover over entries in a new table in Summary to distinguish between first- and third-party data in performance traces.

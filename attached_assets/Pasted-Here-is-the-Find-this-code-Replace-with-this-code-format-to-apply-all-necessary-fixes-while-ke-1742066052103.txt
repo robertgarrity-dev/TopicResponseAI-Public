@@ -1,0 +1,123 @@
+Here is the "Find this code" / "Replace with this code" format to apply all necessary fixes while keeping the rest of the code unchanged.
+
+🛠 Fix #1: ReferenceError - currentPage Not Defined Before Use
+Find this code:
+js
+Copy
+Edit
+currentPage = 1; // Set it before calling loadTopics()
+loadCategories();
+loadTopics(); 
+Replace with this code:
+js
+Copy
+Edit
+let currentPage = 1; // ✅ Define properly before usage
+loadCategories();
+loadTopics(currentPage); 
+✅ Why?
+
+currentPage must be explicitly declared with let before being used.
+loadTopics() now explicitly takes currentPage as an argument to prevent undefined errors.
+🛠 Fix #2: Ensure Category Filtering Works When Selecting a Category
+Find this code:
+js
+Copy
+Edit
+$(document).on('change', '#category-select, #items-per-page', function () {
+    loadTopics(1); 
+});
+Replace with this code:
+js
+Copy
+Edit
+$(document).on('change', '#category-select, #items-per-page', function () {
+    const selectedCategory = $('#category-select').val();
+    loadTopics(1, selectedCategory); // ✅ Pass selected category
+});
+✅ Why?
+
+Previously, category selection wasn't correctly passed to loadTopics().
+Now, when a category is selected, it gets properly applied to the filtering.
+🛠 Fix #3: Modify loadTopics() to Correctly Filter by Category
+Find this code:
+js
+Copy
+Edit
+function loadTopics(page = 1) {
+    currentPage = page;
+    topicsContainer.html('<p>Fetching topics...</p>');
+    const selectedPageSize = $('#items-per-page').val() || pageSize;
+    const selectedCategory = $('#category-select').val();
+    const categoryFilter = selectedCategory !== "all" ? `&category=${encodeURIComponent(selectedCategory)}` : '';
+Replace with this code:
+js
+Copy
+Edit
+function loadTopics(page = 1, selectedCategory = "all") {
+    currentPage = page;
+    topicsContainer.html('<p>Fetching topics...</p>');
+    const selectedPageSize = $('#items-per-page').val() || pageSize;
+    const categoryFilter = selectedCategory !== "all" ? `&category=${encodeURIComponent(selectedCategory)}` : '';
+✅ Why?
+
+Previously, selectedCategory wasn't passed correctly to loadTopics().
+Now, it defaults to "all" if no category is selected, ensuring proper filtering.
+🛠 Fix #4: Fix loadCategories() to Avoid Empty Category Dropdown
+Find this code:
+js
+Copy
+Edit
+const categorySelect = $('#existing-category');
+const filterSelect = $('#category-select');
+
+categorySelect.empty();
+filterSelect.html('<option value="all">All Categories</option>');
+categorySelect.append('<option value="">Select a category</option>');
+Replace with this code:
+js
+Copy
+Edit
+const categorySelect = $('#existing-category');
+const filterSelect = $('#category-select');
+
+categorySelect.empty();
+filterSelect.find('option:not([value="all"])').remove(); // ✅ Preserve "All Categories" option
+categorySelect.append('<option value="">Select a category</option>');
+✅ Why?
+
+Previously, .html('<option value="all">All Categories</option>'); wiped out the category list on reload.
+Now, .find('option:not([value="all"])').remove(); preserves the "All Categories" option while correctly updating categories.
+🛠 Fix #5: Ensure Pagination Works with Category Filtering
+Find this code:
+js
+Copy
+Edit
+$('.page-btn').click(function() {
+    const page = $(this).data('page');
+    loadTopics(page);
+});
+Replace with this code:
+js
+Copy
+Edit
+$('.page-btn').click(function() {
+    const page = $(this).data('page');
+    const selectedCategory = $('#category-select').val();
+    loadTopics(page, selectedCategory); // ✅ Ensure category persists during pagination
+});
+✅ Why?
+
+Previously, changing pages reset the category filter.
+Now, loadTopics(page, selectedCategory); ensures category selection persists across pages.
+🚀 Summary of Fixes
+#	Issue	Fix Applied
+✅ 1	currentPage not defined before use	Defined let currentPage = 1; before calling loadTopics().
+✅ 2	Category selection wasn't applied to loadTopics()	Passed selectedCategory properly when changing categories.
+✅ 3	loadTopics() didn't properly apply category filtering	Added selectedCategory as a function argument.
+✅ 4	loadCategories() wiped out categories on reload	Now preserves "All Categories" and correctly repopulates categories.
+✅ 5	Pagination reset the category filter	Ensured category selection persists when changing pages.
+📌 Final Steps
+🔹 Go through each "Find this code" and "Replace with this code" section.
+🔹 Apply the replacements one by one.
+🔹 Test the category selection and pagination.

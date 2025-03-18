@@ -1,0 +1,98 @@
+Request URL:
+https://app.topicresponseai.com/api/topics/14/suggestions
+Request Method:
+POST
+Status Code:
+429 Too Many Requests
+Remote Address:
+34.111.179.208:443
+Referrer Policy:
+strict-origin-when-cross-origin
+access-control-allow-credentials:
+true
+access-control-allow-headers:
+Content-Type, Authorization, x-api-key
+access-control-allow-methods:
+GET, POST, PUT, DELETE, OPTIONS
+access-control-allow-origin:
+https://app.topicresponseai.com
+alt-svc:
+h3=":443"; ma=2592000,h3-29=":443"; ma=2592000
+content-length:
+166
+content-type:
+application/json; charset=utf-8
+date:
+Thu, 13 Mar 2025 02:36:59 GMT
+etag:
+W/"a6-VBW0xD6Jd25ossCOH/VL5fBNjc0"
+ratelimit-limit:
+3
+ratelimit-policy:
+3;w=60
+ratelimit-remaining:
+0
+ratelimit-reset:
+44
+retry-after:
+44
+server:
+Google Frontend
+set-cookie:
+connect.sid=s%3A1k6LZcWnuyU9R8MxD39Xost8iE9F3b54.GeUtxopj0pAulF4s8Vs%2BzlOM7iUx3Bfc5jxV5mN9QSM; Domain=.topicresponseai.com; Path=/; Expires=Fri, 14 Mar 2025 02:36:59 GMT; HttpOnly; Secure; SameSite=None
+strict-transport-security:
+max-age=63072000; includeSubDomains
+via:
+1.1 google
+x-cloud-trace-context:
+9d6909d3ddf9670750bf71cc77cf71e2
+x-content-type-options:
+nosniff
+x-frame-options:
+DENY
+x-powered-by:
+Express
+x-xss-protection:
+1; mode=block
+:authority:
+app.topicresponseai.com
+:method:
+POST
+:path:
+/api/topics/14/suggestions
+:scheme:
+https
+accept:
+*/*
+accept-encoding:
+gzip, deflate, br, zstd
+accept-language:
+en-US,en;q=0.9
+content-length:
+0
+content-type:
+application/json
+cookie:
+connect.sid=s%3AdNg0VjzdThiHdfLDd8trccJqSemoSXpi.GsRPNsIm80TLenFlEXZAiGF7kTVBv7Fg%2FR0EnQoUqzs; connect.sid=s%3AiI3q_X_HwDgnUBUYRlFNMc_ZMBuruxE9.hGKLOUjFuCryzKkDQ1oFgSmHU%2BeS1vMWxwSNakvxMQc
+origin:
+https://app.topicresponseai.com
+priority:
+u=1, i
+referer:
+https://app.topicresponseai.com/
+sec-ch-ua:
+"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"
+sec-ch-ua-mobile:
+?0
+sec-ch-ua-platform:
+"Windows"
+sec-fetch-dest:
+empty
+sec-fetch-mode:
+cors
+sec-fetch-site:
+same-origin
+user-agent:
+Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+x-api-key:
+6aa470b2c463c71c2cba8129b9da9b9a690236df837bf5e1f74b009d7c05ef36

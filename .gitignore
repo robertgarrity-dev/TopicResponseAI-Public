@@ -1,0 +1,43 @@
+# 🚀 Node.js Dependencies 
+node_modules/
+package-lock.json
+
+# 🚀 Build Output 
+dist/
+build/
+coverage/
+server/public/
+
+# 🚀 Environment Variables (Security - DO NOT PUSH!)
+.env
+.env.local
+
+# 🚀 Replit-Specific Files (Keep only on Replit)
+.replit
+replit.nix
+.upm/
+.cache/
+.local/
+
+# 🚀 IDE and System Files (Mac, VSCode, Replit, etc.)
+.DS_Store
+.vscode/
+*.swp # Vim swap files
+
+# 🚀 Logs and Debugging Files
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🚀 Temporary and Generated Files
+*.tar.gz
+*.zip
+tmp/
+temp/
+.vite/
+
+# 🚀 TypeScript & Vite Specific Files
+vite.config.ts.*
+tsconfig.tsbuildinfo
