@@ -1,4 +1,4 @@
-# 🚀 Node.js Dependencies 
+# 🚀 Node.js Dependencies  
 node_modules/
 package-lock.json
 
@@ -11,6 +11,7 @@ server/public/
 # 🚀 Environment Variables (Security - DO NOT PUSH!)
 .env
 .env.local
+.env.* # Ignore all environment-specific .env files
 
 # 🚀 Replit-Specific Files (Keep only on Replit)
 .replit
@@ -18,6 +19,11 @@ replit.nix
 .upm/
 .cache/
 .local/
+
+# 🚀 Database & ORM Configuration (Prevent DB Leaks)
+drizzle.config.ts # Drizzle ORM config (if not needed in public repo)
+server/db.ts # Contains database setup, prevent accidental exposure
+server/storage.ts # Contains DB storage logic
 
 # 🚀 IDE and System Files (Mac, VSCode, Replit, etc.)
 .DS_Store
@@ -30,6 +36,7 @@ logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+debug.log
 
 # 🚀 Temporary and Generated Files
 *.tar.gz
@@ -41,3 +48,12 @@ temp/
 # 🚀 TypeScript & Vite Specific Files
 vite.config.ts.*
 tsconfig.tsbuildinfo
+
+# 🚀 Authentication & Secrets Files (Prevent Exposing API Keys)
+server/auth.ts # Authentication handling (not needed in public repo)
+server/gemini.ts # AI API Key handling (not needed in public repo)
+server/index.ts # Avoid accidental exposure of session secrets
+
+# 🚀 Replit Backup Files (Prevent from being pushed)
+backup/
+replit.db
