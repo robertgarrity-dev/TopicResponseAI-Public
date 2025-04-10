@@ -1,0 +1,455 @@
+
+/* --- General Page Styling --- */
+
+.tra-container {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* --- Centered Page Header (React-like) --- */
+
+.tra-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tra-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  padding-bottom: 2vw;
+}
+
+/* --- Two-Column Layout --- */
+
+.tra-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr; /* Left column (form) is fixed, right column (topics) expands */
+  gap: 40px;
+  align-items: start; /* Ensures both columns align at the top */
+}
+
+@media (max-width: 768px) {
+  .tra-grid {
+    grid-template-columns: 1fr; /* Stack layout on smaller screens */
+  }
+}
+
+/* --- Left Column: Create Topic Form --- */
+
+#create-topic-form-container {
+  border: 1px solid #d1d5db;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Stronger shadow effect */
+  position: relative;
+  top: 0; /* Aligns it naturally */
+}
+
+@media (min-width: 768px) {
+  #create-topic-form-container {
+    margin-top: 20px; /* Adjust as needed to align properly */
+  }
+}
+
+#create-topic-form-container h3 {
+  font-size: 1.75rem;
+  margin-bottom: 15px;
+  color: #1f2937;
+}
+
+#create-topic-form-container button {
+  background-color: #000000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#create-topic-form-container button:hover {
+  background-color: #808080;
+}
+
+/* --- Right Column: Topics --- */
+
+#topics-container {
+  width: 100%;
+}
+
+/*
+#tra-topics-list {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+*/
+
+/* Ensure Topic Items Match React Styles */
+.topic {
+    border-radius: 0.5rem; /* Rounded corners */
+    border: 1px solid #e5e7eb; /* Light border */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+    backdrop-filter: blur(4px); /* Subtle blur effect */
+    color: #111827; /* Dark text */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Matches shadow-xl */
+    padding: 1.5rem;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+
+    /* Add 5px spacing above and below each topic */
+    margin: 1.5vw 0 !important;
+}
+
+.topic:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Matches shadow-2xl */
+    transform: scale(1.02); /* Scale effect */
+}
+    
+/* Ensure Topic Titles Match React */
+.topic-title {
+    font-size: 1.5rem; /* Matches Tailwind text-2xl */
+    font-weight: 600; /* Matches Tailwind font-semibold */
+    letter-spacing: -0.02em; /* Matches Tailwind tracking-tight */
+    margin-bottom: 10px;
+}
+
+/* Ensure Topic Descriptions Match React */
+.topic-description {
+    font-size: 0.875rem; /* Matches Tailwind text-sm */
+    color: #6b7280; /* Matches Tailwind text-gray-600 */
+}
+
+/* Hover Effects (React-Like) */
+.topic:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Matches Tailwind hover:shadow-md */
+    transform: scale(1.02); /* Slight scale-up effect */
+}
+
+/* --- Remove "Topics" Title from Column-2 --- */
+
+#topics-header {
+  display: none; /* Ensures the "Topics" title is removed */
+}
+
+/* --- AI Suggestions Styling --- */
+
+.suggestions-content {
+  padding: 15px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  white-space: normal; /* Prevents unnecessary pre-wrap */
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.suggestions-content pre {
+  margin: 0;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding: 10px;
+}
+
+/* --- AI Suggestions Formatting (Like React's `prose` class) --- */
+
+.ai-suggestions-content {
+  font-family: "Arial", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Readability Enhancements */
+.ai-suggestions-content strong {
+  font-weight: bold;
+}
+
+.ai-suggestions-content em {
+  font-style: italic;
+}
+
+.ai-suggestions-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.ai-suggestions-content li {
+  margin-bottom: 5px;
+}
+
+.ai-suggestions-content br {
+  display: block;
+  content: "";
+  margin-top: 5px;
+}
+
+/* --- Buttons --- */
+
+button {
+  margin: 5px 0;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4338ca;
+}
+
+/* Adjust button size for consistency */
+.generate-ideas-btn,
+.delete-topic-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Ensure space between icon and text */
+    padding: 8px 12px;
+    font-size: 0.875rem; /* Small text */
+    font-weight: 500;
+    border-radius: 6px;
+    background-color: #628dd6; /* Updated to desired blue */
+    color: #ffffff; /* White text for contrast */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.generate-ideas-btn:hover,
+.delete-topic-btn:hover {
+    background-color: #4c74c9; /* Slightly darker blue on hover */
+}
+
+/* Adjust button size for consistency */
+.generate-ideas,
+.delete-topic-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Ensure space between icon and text */
+    padding: 8px 12px;
+    font-size: 0.875rem; /* Small text */
+    font-weight: 500;
+    border-radius: 6px;
+    background-color: #628dd6; /* Updated to desired blue */
+    color: #ffffff; /* White text for contrast */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.generate-ideas:hover,
+.delete-topic-btn:hover {
+    background-color: #4c74c9; /* Slightly darker blue on hover */
+}
+
+/* Adjust button size for consistency */
+.toggle-suggestions {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Ensure space between icon and text */
+    padding: 8px 12px;
+    font-size: 0.875rem; /* Small text */
+    font-weight: 500;
+    border-radius: 6px;
+    background-color: #628dd6; /* Updated to desired blue */
+    color: #ffffff; /* White text for contrast */
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-suggestions:hover,
+.delete-topic-btn:hover {
+    background-color: #4c74c9; /* Slightly darker blue on hover */
+}
+
+#display-topic-filter {
+    display: flex;
+    justify-content: flex-end; /* Aligns all content to the right */
+    gap: 10px; /* Adds spacing between elements */
+    align-items: center; /* Ensures proper vertical alignment */
+    text-align: right; /* Ensures text is right-aligned */
+}
+
+#display-topic-filter label {
+    white-space: nowrap; /* Prevents labels from wrapping */
+}
+
+#display-topic-filter select {
+    min-width: 120px; /* Ensures dropdowns are properly spaced */
+}
+
+/* --- Fix "Create New Topic" Form Alignment --- */
+
+#create-topic-form {
+  max-width: none;
+  width: 100%;
+}  
+
+#create-topic-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Ensures even spacing between fields */
+    align-items: flex-start; /* Aligns items to the left */
+    width: 100%;
+}
+
+#create-topic-form label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#create-topic-form input[type="text"],
+#create-topic-form textarea,
+#create-topic-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #111827;
+    background-color: #fff;
+}
+
+#create-topic-form fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#create-topic-form button {
+    align-self: flex-start; /* Ensures button is aligned like React */
+    max-width: none;
+    width: 100%;
+}
+
+/* Ensure tra-topics-list has no restrictive padding */
+.tra-topics-list {
+    padding: 0 !important; /* Remove internal padding */
+    width: 100% !important; /* Ensure it takes the full available width */
+}
+
+/* Ensure Full Width Usage */
+.topics-list {
+    width: 100% !important; /* Ensures full width */
+    max-width: 100% !important; /* Prevents constraints */
+    display: block; /* Avoid flex/grid shrinkage */
+    padding: 0px 0px 0px 0px; !important; /* Remove any internal spacing */
+    margin: 0 auto; /* Center alignment if needed */
+    box-sizing: border-box; /* Ensures width includes padding */
+}
+
+/* Category Label Styling - Light Gray Background & Black Text */
+.topic-category {
+    display: inline-block;
+    background-color: #e5e7eb !important; /* Light gray background */
+    color: #111827 !important; /* Black text */
+    font-size: 0.875rem !important; /* Matches React's Tailwind text-sm */
+    font-weight: 500 !important;
+    padding: 6px 12px !important; /* More padding for better spacing */
+    border-radius: 6px !important; /* Slightly rounded corners */
+    border: 1px solid #d1d5db !important; /* Optional subtle border */
+    margin-top: 8px !important;
+}
+
+/* Ensure no conflicting styles from Tailwind */
+.text-sm text-gray-900 {
+    color: #111827 !important; /* Override blue text with black */
+}
+
+.text-sm {
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+.bg-gray-200 {
+    background-color: #e5e7eb !important; /* Override blue background with light gray */
+    padding: 3px 5px 3px 5px;
+}
+
+/* Pagination Container */
+.pagination {
+    display: flex;
+    justify-content: space-between; /* Left-align text & right-align buttons */
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Pagination Info Text (Left-Aligned) */
+.pagination-info {
+    font-size: 0.875rem;
+    color: #4b5563; /* Tailwind's text-gray-600 */
+    margin-left: 10px; /* Ensure it aligns left */
+}
+
+/* Pagination Button Container */
+.pagination-buttons {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 10px; /* Ensure it aligns right */
+}
+
+/* Pagination Buttons */
+.pagination-buttons button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    white-space: nowrap;
+    font-size: 0.875rem; /* Matches text-sm */
+    font-weight: 500;
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    color: #374151;
+    height: 36px;
+    border-radius: 6px;
+    padding: 0 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Active Page */
+.pagination-buttons button.current {
+    background-color: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* Hover Effect */
+.pagination-buttons button:hover {
+    background-color: #e5e7eb;
+    color: #111827;
+}
+
+/* Disabled Button */
+.pagination-buttons button:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+}
